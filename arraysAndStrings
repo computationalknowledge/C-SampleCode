@@ -1,0 +1,36 @@
+using System;
+using System.Runtime.InteropServices;
+
+namespace peanut
+{
+
+    class Program
+    {
+        static String sentence = "The quick brown fox jumped over the lazy dog";
+        static int counter = 0;
+
+        static Object[] o = new Object[sentence.Length];
+        static void Main()
+        {
+            run();
+            Reverse();
+        }
+
+        static void Reverse()
+        {
+            for (int j=sentence.Length-1; j>=0; j--)
+            {
+                Console.WriteLine(sentence[j]);
+            }
+        }
+        static void run()
+        {
+            foreach (var a in sentence)
+            {
+                // Console.WriteLine(a);
+                o[counter++] = a; 
+            }
+        }
+
+    }
+}
