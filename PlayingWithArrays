@@ -1,0 +1,33 @@
+using System;
+
+namespace peanut
+{
+
+    class Program
+    {
+        static String location;
+        static DateTime time = new DateTime();
+
+        static Object[] o = new Object[500];
+        static void Main()
+        {
+            o[0] = location;
+            o[1] = time;
+            o[2] = "dog";
+            o[3] = o;
+            o[4] = o[1];
+
+            run();
+        }
+
+        static void run()
+        {
+            foreach (var a in o)
+            {
+                Console.WriteLine(a);
+                o[o.Length] = 'a'; 
+            }
+        }
+
+    }
+}
